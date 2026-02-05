@@ -3,8 +3,10 @@
 
 # include <unistd.h>
 
-
-int ft_printf_char(char c);
-int ft_printf_str(char *str);
+int ft_char(char c);
+int ft_str(char *str);
+int ft_decimal(int n);
+int ft_unsigned(unsigned int n);
+int ft_integer(int n);
 
 #endif 

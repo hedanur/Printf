@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_decimal.c                                :+:      :+:    :+:   */
+/*   ft_str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hecakir <hecakir@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 11:37:22 by hecakir           #+#    #+#             */
-/*   Updated: 2026/02/04 13:31:26 by hecakir          ###   ########.fr       */
+/*   Created: 2026/02/04 10:52:32 by hecakir           #+#    #+#             */
+/*   Updated: 2026/02/05 15:09:04 by hecakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf_decimal(int nb)
+#include "ft_printf.h"
+
+int ft_str(char *str)
 {
-    ft_putnbr_fd(nb);
+    int i;
 
-    return();
-}
-
-#include <stddef.h>
-#include <stdio.h>
-
-int main()
-{
-    printf("%d",123);
+    if(!str)
+        str = ("null");//?
+    i = 0;
+        while(str[i])
+        {
+            write(1,&str[i],1);
+            i++;
+        }
+    return (i);
 }

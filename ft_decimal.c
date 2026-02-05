@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_decimal.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hecakir <hecakir@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 10:52:32 by hecakir           #+#    #+#             */
-/*   Updated: 2026/02/04 13:28:26 by hecakir          ###   ########.fr       */
+/*   Created: 2026/02/04 11:37:22 by hecakir           #+#    #+#             */
+/*   Updated: 2026/02/05 16:51:14 by hecakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdlib.h>
 
-int ft_printf_str(char *str)
+int ft_decimal(int n)
 {
-    int i;
-
-    if(!str)
-        str = ("null");//?
-    i = 0;
-        while(str[i])
-        {
-            write(1,&str[i],1);
-            i++;
-        }
-    return (i);
-} 
-#include <stddef.h>
-#include <stdio.h>
-
-int main()
-{
-    printf("%s","hedanur");
+	char *str;
+	int i;
+	
+	str = ft_itoa(n);
+	i = ft_str(str);
+	free(str);
+	return(i);
 }
