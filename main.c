@@ -1,3 +1,4 @@
+#include "ft_hex.c"
 #include <stdarg.h>
 #include <stdio.h>
 
@@ -12,7 +13,13 @@
 //     ft_printf("%d\n %s\n %i\n %c\n", 42, "samet", 42, 'c');
 // }
 
-int main()
+int	main(void)
 {
-    printf("%x", 255);
+	int		i;
+	char	*str;
+
+	str = "a";
+	i = 0;
+	ft_hexadecimal(str, i, 'x');
+	printf("%p", str);
 }
