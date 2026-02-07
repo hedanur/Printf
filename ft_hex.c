@@ -6,7 +6,7 @@
 /*   By: hecakir <hecakir@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 18:59:53 by hecakir           #+#    #+#             */
-/*   Updated: 2026/02/05 19:52:17 by hecakir          ###   ########.fr       */
+/*   Updated: 2026/02/07 19:15:44 by hecakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,9 @@ int ft_hexadecimal(unsigned int n, int *i, char format)
         return (-1);
     (*i)++;
     return (*i); 
+}
+
+int main()
+{
+    
 }
