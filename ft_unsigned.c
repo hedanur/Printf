@@ -11,50 +11,25 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdlib.h>
 
-static int	ft_len(long n)
+int ft_unsigned(unsigned int nb) 
 {
-	int	len;
+	int number;
+	char	result;
+	int len;
 
 	len = 0;
-	while (n != 0)
+	if (nb > 9)
 	{
-		n = n / 10;
-		len++;
+		number = ft_unsigned(nb / 10);
+		if (number == -1)
+			return (-1);
+		len += number;
 	}
-	return (len);
-}
-
-static  char	*ft_uitoa(unsigned int n)
-{
-	char	*str;
-	int		len;
-	unsigned long	nb;
-
-	nb = (long)n;
-	len = ft_len(nb);
-	str = malloc((len + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	str[len] = '\0';
-	if (nb == 0)
-		str[0] = '0';
-	while (nb > 0)
-	{
-		str[len - 1] = (nb % 10) + '0';
-		nb = nb / 10;
-		len--;
-	}
-	return (str);
-}
-int ft_unsigned(unsigned int n) // unsigned ve int değer aralığı bak
-{
-    int i;
-    char *str;
-    
-    str = ft_uitoa(n);
-    i = ft_str(str);
-    free(str);
-    return (i);
+	result = (nb % 10) + '0';
+	number = write(1,&result,1);
+	if (number == -1)
+		return (-1);
+	len++;
+	return(len);
 }

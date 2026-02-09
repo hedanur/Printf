@@ -12,26 +12,25 @@
 
 #include "ft_printf.h"
 
-int ft_hexadecimal(unsigned int n, int *i, char format)
+int ft_hex(unsigned long int n, char format)
 {
     int result;
+    int counter;
+
+    counter = 0;
     if (n >= 16)
     {
-        result = ft_hexadecimal(n / 16, i, format);
+        result = ft_hex(n / 16,format);
         if (result == -1)
             return (-1);
+        counter += result;
     }
-    if (format ==  'x')
+    if (format == 'x' || format == 'p')
        result =  write(1,&"0123456789abcdef"[n % 16],1);
     else
        result = write(1,&"0123456789ABCDEF"[n % 16],1);
     if (result == -1)
         return (-1);
-    (*i)++;
-    return (*i); 
-}
-
-int main()
-{
-    
+    counter++;
+    return (counter); 
 }
