@@ -10,11 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	ftprintf.a
+NAME =	libftprintf.a
 
 SRC	=	ft_str.c\
 		ft_char.c\
-
+		ft_decimal.c\
+		ft_unsigned.c\
+		ft_hex.c\
+		ft_ptr.c\
+		ft_printf.c
 
 OBJ	=	$(SRC:.c=.o)
 

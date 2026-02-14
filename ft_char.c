@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hecakir <hecakir@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 11:27:01 by hecakir           #+#    #+#             */
-/*   Updated: 2026/02/07 19:41:24 by hecakir          ###   ########.fr       */
+/*   Created: 2026/02/13 16:40:05 by hecakir           #+#    #+#             */
+/*   Updated: 2026/02/13 16:40:05 by hecakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <unistd.h>
 
-int ft_char(char c)
+int	ft_char(char c)
 {
-    int result;
-    
-    result = write(1,&c,1);
-    if (result == -1)
-        return (-1);
-    return (1);
+	int	result;
+
+	result = write(1, &c, 1);
+	if (result == -1)
+		return (-1);
+	return (1);
 }
